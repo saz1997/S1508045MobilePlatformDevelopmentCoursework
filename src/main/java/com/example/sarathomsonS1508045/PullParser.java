@@ -16,6 +16,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 
 
+//pull parse of data
 public class PullParser {
 
     LinkedList <Earthquake> allQuakes;
@@ -79,7 +80,8 @@ public class PullParser {
                             earthquake.setTitle(text);
                         } else if(tagname.equalsIgnoreCase("description") && quakeStart == true ) {
 
-                            //parseDescription(text);
+
+                            //further parse the Description and put it in array
                             String temp = text;
                             String[] array = temp.split(";");
 

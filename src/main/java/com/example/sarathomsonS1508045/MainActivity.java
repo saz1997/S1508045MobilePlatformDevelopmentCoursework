@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         final Button button = (Button) findViewById(R.id.set);
 
 
-
+//date picker first date
         button.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("NewApi")
             @Override
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity
                         dateStart.setMinutes(0);
                         dateStart.setSeconds(0);
 
+                        //date picker select second date
                         datePicker1.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
 
 
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity
                                     }
 
                                 }
-
+//print out the new filtered list of earthquakes
                                 System.out.println(filtered.size());
                                 if (filtered.size() != 0) {
                                     findValue(filtered);
@@ -192,7 +193,7 @@ public class MainActivity extends AppCompatActivity
     //{
     //  startProgress();
 
-
+//updating the app
     Timer timer = new Timer();
     TimerTask update = new TimerTask(){
         @Override
@@ -253,14 +254,12 @@ public class MainActivity extends AppCompatActivity
             }
 
             //
-            // Now that you have the xml data you can parse it
+            //parsing the data
             PullParser parser = new PullParser();
             allQuakes = parser.parse(url1);
             //
 
-            // Now update the TextView to display raw XML data
-            // Probably not the best way to update TextView
-            // but we are just getting started !
+
 
             MainActivity.this.runOnUiThread(new Runnable() {
                 public void run() {
@@ -291,7 +290,7 @@ public class MainActivity extends AppCompatActivity
                     quakelistView.setAdapter(adapter); } catch (NoSuchElementException e){
                         Log.e("Error Tag", "No Mobile Data Connection");
                     }
-                    //rawDataDisplay.setText(result);
+
                 }
             });
         }
@@ -300,7 +299,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    // set filter
+    // set filter for earthquake categories
 
 
     public void findValue(LinkedList<Earthquake> list){
@@ -322,7 +321,7 @@ public class MainActivity extends AppCompatActivity
             int dei = 0;
             int i = 0;
 
-            //for loop
+            //for loop to check the filtered list
 
             for (Earthquake currentEarthquake : list) {
                 //System.out.println(currentEarthquake.toString());
@@ -354,7 +353,7 @@ public class MainActivity extends AppCompatActivity
                 i++;
             }
 
-                    //print data
+                    //print the category data
 
                     System.out.println("");
                     System.out.println(i);

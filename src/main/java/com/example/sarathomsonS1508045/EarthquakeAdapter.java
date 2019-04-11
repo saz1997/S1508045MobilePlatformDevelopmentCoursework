@@ -27,6 +27,7 @@ public class EarthquakeAdapter extends BaseAdapter {
         this.eAllQuakes = eAllQuakes;
     }
 
+    //display all earthquakes
     @Override
     public int getCount() {
         return eAllQuakes.size();
@@ -43,6 +44,7 @@ public class EarthquakeAdapter extends BaseAdapter {
         return position;
     }
 
+    //getting the text view data for first screen
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(eContext, R.layout.item_view, null);
@@ -53,7 +55,7 @@ public class EarthquakeAdapter extends BaseAdapter {
         TextView tvODate = (TextView) view.findViewById(R.id.tvODate);
         TextView extreme = (TextView) view.findViewById(R.id.Extreme);
 
-        //setting the text view
+        //setting the text view for first screen
         tvODate.setText("Date/Time: " + eAllQuakes.get(position).getPubDate());
         tvLocation.setText("Location: " + eAllQuakes.get(position).getLocation());
         //tvLatLong.setText(eAllQuakes.get(position).getLatlong());

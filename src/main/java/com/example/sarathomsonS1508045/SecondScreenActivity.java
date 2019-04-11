@@ -25,12 +25,16 @@ public class SecondScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_screen);
 
+
+        //setting up second page
+
         //eToolbar = findViewById(R.id.toolbar);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             String s= bundle.getString("Earthquake");
             //eToolbar.setTitle(s);
 
+            //adding data to the second page
             details = findViewById(R.id.tvO);
             details.setText(s);
 
@@ -38,6 +42,7 @@ public class SecondScreenActivity extends AppCompatActivity {
 
         }
 
+        //setting the background colour of the application second video
         secondView = findViewById(R.id.secondView);
         secondView.setBackgroundColor(getResources().getColor(R.color.white,null));
 
